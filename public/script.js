@@ -23,7 +23,6 @@ navigator.mediaDevices
       debugger;
       call.answer(stream);
       const video = document.createElement("video");
-      console.log(video);
       call.on("stream", (userVideoStream) => {
         addVideoStream(video, userVideoStream);
       });
@@ -40,8 +39,7 @@ peer.on("open", (id) => {
 
 const connectToNewUser = (userId, stream) => {
   const call = peer.call(userId, stream);
-  const video = document.createElement("video2");
-  console.log(video);
+  const video = document.createElement("video");
   call.on("stream", (userVideoStream) => {
     addVideoStream(video, userVideoStream);
   });
